@@ -1,4 +1,5 @@
 // import 'package:flutter/material.dart';
+// // import 'package:google_fonts/google_fonts.dart';
 
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
@@ -27,64 +28,41 @@
 //         title: const Text("My First Application",
 //             style: TextStyle(
 //                 color: Colors.white,
-//                 fontSize: 18,
+//                 fontSize: 10,
 //                 fontWeight: FontWeight.w600,
 //                 letterSpacing: 1)),
 //         centerTitle: true,
 //       ),
-//     );
-//   }
-// }
-
-// import 'package:flutter/material.dart';
-
-// class HomePage extends StatelessWidget {
-//   @override
-//   Widget build(Object context) {
-//     return Scaffold(
-//       backgroundColor: Colors.indigo,
-//       appBar: AppBar(
-//         title: Text(
-//           "My App",
-//           style: const TextStyle(color: Colors.blue, fontSize: 30),
-//         ),
-//         centerTitle: true,
-//         backgroundColor: Colors.pink[400],
-//       ),
-//     );
-//   }
-// }
-
-// import 'package:flutter/material.dart';
-
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.blue[300],
-//       appBar: AppBar(
-//         leading: const Icon(
-//           Icons.warehouse,
-//           color: Colors.yellow,
-//           size: 50,
-//         ),
-//         actions: const [
-//           Icon(
-//             Icons.warehouse,
-//             color: Colors.yellow,
-//             size: 50,
-//           ),
-//         ],
-//         title: const Text(
-//           "My First App",
+//       body:
+//           //  Center(
+//           //     child:
+//           Container(
+//         color: Colors.indigo,
+//         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+//         margin: EdgeInsets.only(top: 20, left: 30),
+//         // alignment: Alignment.center,
+//         child: Text(
+//           "Hello Worlds",
+//           // style: GoogleFonts.shadowsIntoLight(
+//           //     fontSize: 30,
+//           //     color: Colors.red,
+//           //     fontWeight: FontWeight.w600,
+//           //     letterSpacing: 1),
 //           style: TextStyle(
-//             color: Colors.white,
+//             color: Colors.blue,
 //             fontSize: 30,
+//             // fontFamily: "Kalnia Expanded",
+//             fontFamily: "Roboto",
+//             decoration: TextDecoration.lineThrough,
+//             decorationColor: Colors.amberAccent,
+//             decorationThickness: 2,
+//             fontStyle: FontStyle.italic,
+//             fontWeight: FontWeight.w600,
+//             height: 1.5,
+//             letterSpacing: 1.5,
 //           ),
 //         ),
-//         backgroundColor: Colors.greenAccent,
+//         // )
 //       ),
 //     );
 //   }
@@ -93,37 +71,14 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
       appBar: AppBar(
-        leading: const Icon(
-          Icons.home,
-          color: Colors.white,
-          size: 50,
-        ),
-        title: const Text(
-          "Hello World",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        actions: const [
-          Icon(
-            Icons.soap,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.alarm,
-            color: Colors.white,
-          )
-        ],
-        centerTitle: true,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
+        title: Text("hello World"),
       ),
+      body: Center()
     );
   }
 }
