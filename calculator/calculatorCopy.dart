@@ -1,3 +1,4 @@
+import 'package:counter_example/calculator/button_menu.dart';
 import 'package:counter_example/calculator/calculator_buttonCopy.dart';
 import 'package:counter_example/calculator/theme.dart';
 import 'package:flutter/material.dart';
@@ -11,26 +12,46 @@ class CalculatorCopy extends StatefulWidget {
 }
 
 class _CalculatorCopyState extends State<CalculatorCopy> {
-  List<String> _buttonLists = [
-    "AC",
-    "C",
-    "%",
-    "/",
-    "7",
-    "8",
-    "9",
-    "X",
-    "4",
-    "5",
-    "6",
-    "-",
-    "1",
-    "2",
-    "3",
-    "+",
-  ];
   String expression = "";
   String result = "";
+  List<ButtonMenu> _buttonLists = [];
+  @override
+  void initState() {
+    super.initState();
+    _buttonLists = [
+      ButtonMenu(
+          label: "AC",
+          onPressed: () {
+            expression = "";
+            result = "";
+          }),
+      ButtonMenu(
+          label: "C",
+          onPressed: () {
+            if (expression.length >= 1) {
+              expression = expression.substring(0, expression.length - 1);
+            }
+          }),
+      ButtonMenu(label: "%"),
+      ButtonMenu(label: "/"),
+      ButtonMenu(label: "7"),
+      ButtonMenu(label: "8"),
+      ButtonMenu(label: "9"),
+      ButtonMenu(
+          label: "X",
+          onPressed: () {
+            expression += '*';
+          }),
+      ButtonMenu(label: "4"),
+      ButtonMenu(label: "5"),
+      ButtonMenu(label: "6"),
+      ButtonMenu(label: "-"),
+      ButtonMenu(label: "1"),
+      ButtonMenu(label: "2"),
+      ButtonMenu(label: "3"),
+      ButtonMenu(label: "+"),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,23 +87,20 @@ class _CalculatorCopyState extends State<CalculatorCopy> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4, mainAxisSpacing: 10, crossAxisSpacing: 10),
+                  // childAspectRatio: 1,
+                  // mainAxisExtent: 200,
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10),
               itemBuilder: (context, index) {
                 return CalculatorButton(
-                  label: _buttonLists[index],
+                  label: _buttonLists[index].label,
                   color: CalculatorTheme.buttonColor,
                   onPressed: () {
-                    if (index == 0) {
-                      expression = "";
-                      result = "";
-                    } else if (index == 1) {
-                      final separate = expression.split("");
-                      separate.removeLast();
-                      expression = separate.join();
-                    } else if (index == 7) {
-                      expression += _buttonLists[index];
+                    if (_buttonLists[index].onPressed != null) {
+                      _buttonLists[index].onPressed!();
                     } else {
-                      expression += _buttonLists[index];
+                      expression += _buttonLists[index].label;
                     }
                     setState(() {});
                   },

@@ -1,7 +1,9 @@
+import 'package:counter_example/furniture/AppUI.dart';
+import 'package:counter_example/furniture/Furniture.dart';
 import 'package:counter_example/calculator/calculator.dart';
 import 'package:counter_example/calculator/calculatorCopy.dart';
 import 'package:counter_example/homepage.dart';
-import 'package:counter_example/homepage2.dart';
+import 'package:counter_example/ListView.dart';
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
@@ -34,7 +36,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My App",
       debugShowCheckedModeBanner: false,
-      home: HomePage2(),
+      home: Furniture(),
+      // theme: ThemeData(textTheme: GoogleFonts.),
     );
   }
 }
