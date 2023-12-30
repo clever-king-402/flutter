@@ -34,6 +34,7 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen> {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
             ),
             padding: EdgeInsets.only(top: 34, left: 20, right: 20),
             child: Column(
@@ -99,7 +100,7 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen> {
                   ],
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 36),
+                    padding: EdgeInsets.only(top: 36, left: 20, right: 20),
                     child: ReadMoreText(
                       Faker().lorem.sentences(10).join(". "),
                       style: TextStyle(
@@ -112,6 +113,18 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen> {
                       textAlign: TextAlign.justify,
                       trimCollapsedText: 'Show more',
                       trimExpandedText: 'Show less',
+                      moreStyle: TextStyle(
+                        color: Colors.indigo,
+                        fontSize: 16,
+                        height: 1.45,
+                        letterSpacing: 0.7,
+                      ),
+                      lessStyle: TextStyle(
+                        color: Colors.indigo,
+                        fontSize: 16,
+                        height: 1.45,
+                        letterSpacing: 0.7,
+                      ),
                     ))
               ],
             ),
